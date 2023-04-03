@@ -21,9 +21,13 @@ iOS Project implemented with Clean Layered Architecture and MVVM.
 
  
 ## Includes
+* Object oriented programming approach
 * SwiftUI for views
+* Data Binding using Observable
+* For data parsing, used the Codable approach.
 * Unit Tests for Use Cases(Domain Layer), ViewModels(Presentation Layer), NetworkService(Infrastructure Layer)
 * UI test with XCUITests
+* Static code analysis using Swift lint
 
 ## Requirements
 * Xcode Version 13.4.1+  Swift 5.0+
