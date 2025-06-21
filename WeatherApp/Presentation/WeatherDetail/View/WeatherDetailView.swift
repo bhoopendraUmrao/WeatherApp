@@ -39,7 +39,7 @@ struct WeatherDetailView: View {
             HStack {
                 Text("Pressure")
                 Spacer()
-                Text(String(format: "%.2f F", weatherForecast.values.pressure ?? 0.0))
+                Text(String(format: "%.2f C", weatherForecast.values.pressure ?? 0.0))
             }
 
             HStack {
@@ -58,7 +58,7 @@ struct WeatherDetailView: View {
 struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherDetailView(weatherForecast: .init(
-            startTime: "2023-04-06T10:00:00Z",
+            startTime: dateFormatter(Date()),
             values: .init(windDirection: 1212,
                           pressure: 1013,
                           precip: 0,
@@ -67,4 +67,13 @@ struct WeatherDetailView_Previews: PreviewProvider {
                           temperature: 25)
         ))
     }
+}
+
+func dateFormatter(_ futureDate: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    formatter.timeZone = TimeZone(secondsFromGMT: 0) // ensures 'Z' means UTC
+    let dateString = formatter.string(from: futureDate)
+    print(dateString)
+    return dateString
 }

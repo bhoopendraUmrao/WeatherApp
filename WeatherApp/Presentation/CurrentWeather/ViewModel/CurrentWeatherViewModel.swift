@@ -35,7 +35,7 @@ final class DefaultCurrentWeatherViewModel: CurrentWeatherViewModel {
     func didFetch() {
         Task {
             do {
-                let weather = try await weatherUseCase.fetchCurrentWeather(query: "Newyork")
+                let weather = try await weatherUseCase.fetchCurrentWeather(query: "Edmonton, AB, Canada")
                 await MainActor.run { [weather] in
                     currentWeather = weather
                 }

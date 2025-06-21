@@ -18,17 +18,17 @@ struct CurrentWeatherView<ViewModel: CurrentWeatherViewModel>: View {
                     CurrentWeatherCardView(currentWeather: weather)
                     Text("Forecast")
                         .font(.title)
-                    List(viewModel.forecastWeatherList, id: \.startTime) { item in
+                    List(viewModel.forecastWeatherList.enumerated().map { $0 }, id: \.offset) { index, item in
                         NavigationLink {
                             WeatherDetailView(weatherForecast: item)
                         } label: {
                             ForecastView(
                                 weather: .init(
-                                    date: item.startTime, temperature: item.values.temperature ?? 0.0
+                                    date: item.startTime ?? Date(),
+                                    temperature: item.values.temperature ?? 0.0
                                 )
                             )
-                        }
-                        .accessibilityIdentifier("navigationLink")
+                        }.accessibilityIdentifier("NavigationLink")
                     }
                     .listStyle(.inset)
                     Spacer()

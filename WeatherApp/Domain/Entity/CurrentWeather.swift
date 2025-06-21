@@ -30,11 +30,12 @@ struct Weather: Equatable {
 }
 
 struct WeatherForecast: Equatable {
+    var id: Date { startTime ?? Date.distantPast }
     let startTime: Date?
     let values: Weather
 
     init(startTime: String, values: Weather) {
-        self.startTime = startTime.formattedDate(withFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        self.startTime = startTime.formattedDate(withFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'")
         self.values = values
     }
 }
