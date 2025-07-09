@@ -28,33 +28,33 @@ struct CurrentWeatherCardView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Temperature:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.temperature ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.temperature ?? 0.0))
                             .accessibilityIdentifier("temperature")
 
                     }
                     HStack {
                         Text("Wind:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.windDirection ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.windDirection ?? 0.0))
                             .accessibilityIdentifier("wind")
                     }
                     HStack {
                         Text("Pressure:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.pressure ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.pressure ?? 0.0))
                             .accessibilityIdentifier("pressure")
                     }
                     HStack {
                         Text("Precip:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.precip ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.precip ?? 0.0))
                             .accessibilityIdentifier("precip")
                     }
                     HStack {
                         Text("Humidity:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.humidity ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.humidity ?? 0.0))
                             .accessibilityIdentifier("humidity")
                     }
                     HStack {
                         Text("Cloud:")
-                        Text(String(format: "%.2f F", currentWeather.weather?.cloudcover ?? 0.0))
+                        Text(String(format: "%.2f C", currentWeather.weather?.cloudcover ?? 0.0))
                             .accessibilityIdentifier("cloudcover")
                     }
                 }

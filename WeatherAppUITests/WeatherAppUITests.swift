@@ -23,12 +23,12 @@ class WeatherAppUITests: XCTestCase {
         let temperature = app.staticTexts["temperature"]
         XCTAssertTrue(temperature.waitForExistence(timeout: 5),
                       "the temperature text should be visible")
-        XCTAssertEqual("25.00 F", temperature.label)
+        XCTAssertEqual("25.00 C", temperature.label)
 
         let wind = app.staticTexts["wind"]
         XCTAssertTrue(wind.waitForExistence(timeout: 5),
                       "the wind text should be visible")
-        XCTAssertEqual("1212.00 F", wind.label)
+        XCTAssertEqual("1212.00 C", wind.label)
 
         let location = app.staticTexts["location"]
         XCTAssertTrue(location.waitForExistence(timeout: 5),
@@ -37,7 +37,7 @@ class WeatherAppUITests: XCTestCase {
     }
 
     func testWeatherDetailAction() {
-        let navigationButton = app.buttons["navigationLink"]
+        let navigationButton = app.buttons["NavigationLink"]
 
         XCTAssertTrue(navigationButton.waitForExistence(timeout: 5),
                       "the navigation link should be present")

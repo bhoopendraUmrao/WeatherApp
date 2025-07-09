@@ -42,7 +42,7 @@ final class DefaultWeatherRepository: WeatherRepository {
             "units": "metric",
             "timesteps": ["1d"],
             "startTime": "now",
-            "endTime": "nowPlus6d"
+            "endTime": "nowPlus5d"
         ]
 
         let endpoint = Endpoint<WeatherForecastReponse>(

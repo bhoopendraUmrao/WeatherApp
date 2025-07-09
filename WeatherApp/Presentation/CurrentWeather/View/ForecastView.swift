@@ -13,7 +13,7 @@ struct ForecastView: View {
         HStack {
             Text(weather.date ?? Date(), style: .date)
             Spacer()
-            Text(String(format: "%.2f F", weather.temperature))
+            Text(String(format: "%.2f C", weather.temperature))
         }
         .padding()
     }
